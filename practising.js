@@ -115,3 +115,45 @@ const capitalStarSigns = [];
 
 capitaliseStarSign(starSigns);
 console.log(capitalStarSigns);
+
+//.map would do same as above without need of pushing
+const lowerStarSigns = capitalStarSigns.map(element => {
+    return element.toLowerCase(); //.map needs return
+})
+
+console.log(lowerStarSigns);
+
+const ageInTenYears = friends.map(element => {
+    return element[2] + 10;
+})
+
+console.log(ageInTenYears);
+
+//.filter return everything for which the condition is true
+const aStarSigns = starSigns.filter(starSign => {
+    return starSign[0]==='A';
+});
+
+console.log(aStarSigns);
+
+//.reduce add all numbers
+const randomNumbers = [2, 43, 5, 3, 10, 23];
+
+const sumRandomNumbers = randomNumbers.reduce((x, z) => {
+    return x + z;
+})
+
+console.log(sumRandomNumbers);
+
+//.reduce also will add other types of variable
+const secretCode = ['apple', 'pear', 'potato', 'yellow']
+
+const result = secretCode.reduce((acc, currVal) => {
+    return acc + currVal[0];
+}, 'H');    //need to have starting value or will log whole first item which didn't want
+
+console.log(result);
+
+//find out if some or every part of array meets a condition
+console.log(randomNumbers.every(num => num > 40)); //all numbers are not less than 40 so logs false
+console.log(randomNumbers.some(num => num%5)); //some numbers are divisible by 5 so true
