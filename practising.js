@@ -34,3 +34,33 @@ const floorCost = function(cost) {
 }
 
 console.log(floorCost(5)); //send the cost as parameter
+
+//arrays with built in methods
+const entrants = ['Millie', 'Joe', 'Sam', 'Jude', 'Rebecca', 'Katie', 'Andy', 'Jack', 'Mitchell', 'Jenny'];
+
+entrants.push('Becky');
+console.log(entrants);
+console.log(entrants.length);
+
+entrants.shift(); //removes first index and everything shifts up
+console.log(entrants);
+entrants.unshift('Tom');
+console.log(entrants);
+console.log(entrants.slice(2,7)); //gives section, 1st parameter inclusive, second exclusive, nonmutating
+
+const joeIndex = entrants.indexOf('Joe'); //gives index of an element
+console.log(joeIndex);
+
+//functions on array
+//function set up with parameter of array but not linked yet to specific array
+const changeThirdElement = (arr) => {
+    return arr[2] = 'Bob';
+};
+
+changeThirdElement(entrants); //calling function on specific array
+console.log(entrants[2]); //should be changed to Bob
+
+//nested array example
+const friends = [['Katie', 'female', 23], ['Terry', 'male', 24], ['Peter', 'male', 43], ['Joan', 'female', 21],
+['Kerry', 'female', 33], ['Mike', 'male', 42]];
+console.log(friends[3][0]); //should be joan
