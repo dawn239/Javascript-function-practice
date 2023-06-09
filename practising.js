@@ -64,3 +64,54 @@ console.log(entrants[2]); //should be changed to Bob
 const friends = [['Katie', 'female', 23], ['Terry', 'male', 24], ['Peter', 'male', 43], ['Joan', 'female', 21],
 ['Kerry', 'female', 33], ['Mike', 'male', 42]];
 console.log(friends[3][0]); //should be joan
+
+//nested loops, checking arrays for matches
+const ineligible = ['Millie', 'Jason', 'Sofie', 'Jude', 'Rachel', 'Kora', 'Andy', 'Kym'];
+const disqualified = [];
+for (let i = 0; i < entrants.length; i++) {
+    for (let j = 0; j < ineligible.length; j++) {
+        if (entrants[i]===ineligible[j]) {
+            disqualified.push(entrants[i]);
+        }
+    }
+}
+
+console.log(disqualified); //only logs Jude and Andy as Millie was taken off during .shift
+
+//generate two random numbers and run while look until they are matches
+
+let counter1 = 5;
+let counter2 = 0;
+
+do {
+    counter2 = Math.floor(Math.random()*6); //i broke this initially as I set it as 5 but that meant it never reached 5!!
+    console.log(counter2);
+} while (counter1 !== counter2);
+
+//two numbers now I get it!!
+
+let counter3 = 0
+let counter4 = 1
+
+while (counter3 !== counter4) {
+    counter3 = Math.floor(Math.random()*10);
+    counter4 = Math.floor(Math.random()*10);
+    console.log(counter3, counter4);
+}
+
+//iterators for arrays, callback functions
+const starSigns = ['Aquarius', 'Aries', 'Leo', 'Sagittarius', 'Taurus', 'Virgo', 'Capricorn', 'Gemini', 'Libra', 'Cancer', 'Scorpio', 'Pisces'];
+starSigns.forEach(starSign => console.log(starSign + ' is a star sign')); //knows starSign is an element, could call it anything
+
+//above is being decalred and called at the same time, could do separately, useful if wanting to reuse function
+const capitalStarSigns = [];
+
+    function capitaliseStarSign(arr) {
+        arr.forEach(element => {
+            capitalStarSigns.push(element.toUpperCase()); //pushing each element, could just have element is () but added function of capitalise
+        });
+    };
+
+
+capitaliseStarSign(starSigns);
+console.log(capitalStarSigns);
